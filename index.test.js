@@ -1,4 +1,4 @@
-import { mkdtemp, rmdir } from 'fs/promises';
+import { mkdtemp, rm } from 'node:fs/promises';
 import plugin from './index.js';
 import * as underlyingPlugin from '@semantic-release/npm';
 
@@ -9,7 +9,7 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-  await rmdir(workingDirectory, { recursive: true });
+  await rm(workingDirectory, { recursive: true });
 });
 
 const createPluginConfig = () => ({
