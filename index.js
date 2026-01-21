@@ -65,9 +65,9 @@ function createCallbackWrapper(callbackName) {
         'NPM_CONFIG_REGISTRY',
         'NPM_CONFIG_USERCONFIG',
       ]) {
-        const overridenValue = env[environmentVariablePrefix + variableName];
-        if (overridenValue) {
-          childEnv[variableName] = overridenValue;
+        const overriddenValue = env[environmentVariablePrefix + variableName];
+        if (overriddenValue) {
+          childEnv[variableName] = overriddenValue;
         }
       }
 
