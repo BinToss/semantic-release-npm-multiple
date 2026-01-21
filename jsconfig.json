@@ -4,6 +4,7 @@
     "moduleResolution": "nodenext",
     "target": "ES2024",
     "allowImportingTsExtensions": true,
+    "composite": true,
     "emitDeclarationOnly": true,
     "strict": true,
     "erasableSyntaxOnly": true,
