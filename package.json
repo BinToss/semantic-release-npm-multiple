@@ -23,12 +23,18 @@
     "semantic-release",
     "version"
   ],
+  "scripts": {
+    "postinstall": "husky",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
+  },
   "devDependencies": {
     "@commitlint/config-conventional": "^20.0.0",
     "commitlint": "^20.0.0",
-    "husky": "4.x",
+    "husky": "^9.1.7",
     "jest": "^30.0.0",
     "lint-staged": "^16.0.0",
+    "pinst": "^3.0.0",
     "prettier": "^3.0.2",
     "semantic-release": "^24.2.0"
   },
