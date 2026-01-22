@@ -46,6 +46,7 @@ function createCallbackWrapper(callbackName) {
 
       const callback = plugin[callbackName];
       if (!callback) {
+        context.logger.error(`${callbackName} does not exist in plugin!`);
         return;
       }
 
