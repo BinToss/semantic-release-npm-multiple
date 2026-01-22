@@ -1,5 +1,5 @@
 // @ts-check
-import { mkdtemp, rm } from 'node:fs/promises';
+import { mkdtemp, rm, copyFile, stat, mkdir } from 'node:fs/promises';
 import plugin from './index.js';
 import * as underlyingPlugin from '@semantic-release/npm';
 
@@ -7,7 +7,17 @@ import * as underlyingPlugin from '@semantic-release/npm';
 let workingDirectory;
 
 beforeAll(async () => {
-  workingDirectory = await mkdtemp('.');
+  /** @type {false | import('node:fs').Stats} */
+  const stats = await stat('.tmp').catch(_ => false);
+  let exists = !!stats;
+  const isDirectory = !!stats && stats.isDirectory();
+  if (exists && !isDirectory) {
+    await rm('.tmp');
+    exists = false;
+  }
+  if (!exists) mkdir('.tmp');
+  workingDirectory = await mkdtemp('.tmp/.');
+  await copyFile('./package.json', workingDirectory + '/package.json');
 });
 
 afterAll(async () => {
