@@ -1,3 +1,4 @@
+// @ts-check
 const underlyingPluginSpecifier = '@semantic-release/npm';
 
 // We use the safe navigation operator because when this module
