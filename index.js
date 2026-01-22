@@ -5,7 +5,17 @@ const underlyingPluginSpecifier = '@semantic-release/npm';
 // is executed by jest, import.meta.resolve is unavailable.
 const resolvedNpm = import.meta.resolve?.(underlyingPluginSpecifier);
 
+/**
+ * @typedef {Promise<unknown>} PluginPromise
+ * @typedef {Record<string, PluginPromise>} RegistryPlugins
+ * @import {BaseContext, VerifyConditionsContext} from 'semantic-release'
+ */
+
+/** @type {RegistryPlugins} */
 const registryPlugins = {};
+/**
+ * @param {string } registryName
+ */
 async function getChildPlugin(registryName) {
   let plugin = registryPlugins[registryName];
   if (!plugin) {
@@ -38,6 +48,19 @@ async function getChildPlugin(registryName) {
   return await plugin;
 }
 
+/**
+ * @param {string} callbackName
+ * @returns { (
+ *   arg0: {
+ *     registries: Record<string, object>,
+ *     [key:string]: unknown
+ *   },
+ *   context: {
+ *     logger: BaseContext['logger'],
+ *     env?: VerifyConditionsContext['env'] | undefined
+ *   }
+ * ) => Promise<void> }
+ */
 function createCallbackWrapper(callbackName) {
   return async ({ registries, ...pluginConfig }, context) => {
     for (const [registryName, childConfig] of Object.entries(
