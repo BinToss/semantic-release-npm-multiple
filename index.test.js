@@ -17,11 +17,28 @@ const createPluginConfig = () => ({
   npmPublish: false,
 });
 
+/**
+ * @returns {{
+ *   logger: typeof console,
+ *   stdout: NodeJS.WritableStream
+ *   stderr: NodeJS.WritableStream
+ *   env: Record<string, string>,
+ *   nextRelease: { version: string },
+ *   cwd: string,
+ *   options: {}
+ * } & import('semantic-release').VerifyConditionsContext}
+ */
 const createContext = () => ({
   logger: console,
+  stdout: process.stdout,
+  stderr: process.stderr,
   env: {},
-  nextRelease: { version: '1.0' },
+  nextRelease: { version: '1.0.0' },
   cwd: workingDirectory,
+  options: {},
+  branch: { name: 'main' },
+  branches: [{ name: 'main' }],
+  envCi: { branch: 'main', commit: '0', isCi: false },
 });
 
 describe('addChannel', () => {
