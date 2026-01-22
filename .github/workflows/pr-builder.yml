@@ -15,7 +15,7 @@ jobs:
           node-version: latest
           cache: yarn
       - name: Install dependencies
-        run: yarn --immutable --immutable-cache --check-cache
+        run: yarn --immutable --check-cache
       - name: Lint
         run: yarn prettier --check "./**/*.{js,md}"
       - name: Test
