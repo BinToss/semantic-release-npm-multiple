@@ -21,8 +21,8 @@ jobs:
         run: yarn --frozen-lockfile --ignore-scripts
       - name: Lint
         run: yarn prettier --check "./**/*.{js,md}"
-      - name: Jest
-        run: NODE_OPTIONS=--experimental-vm-modules yarn jest
+      - name: Test
+        run: yarn test
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

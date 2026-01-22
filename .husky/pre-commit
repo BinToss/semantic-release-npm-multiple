@@ -1,1 +1,1 @@
-yarn lint-staged && NODE_OPTIONS=--experimental-vm-modules jest --passWithNoTests -o
+yarn lint-staged && yarn test

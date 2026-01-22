@@ -26,13 +26,13 @@
   "scripts": {
     "postinstall": "husky",
     "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "postpack": "pinst --enable",
+    "test": "node --test"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^20.0.0",
     "commitlint": "^20.0.0",
     "husky": "^9.1.7",
-    "jest": "^30.0.0",
     "lint-staged": "^16.0.0",
     "pinst": "^3.0.0",
     "prettier": "^3.0.2",
