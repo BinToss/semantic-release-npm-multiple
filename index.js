@@ -44,7 +44,7 @@ function createCallbackWrapper(callbackName) {
     )) {
       const plugin = await getChildPlugin(registryName);
 
-      const callback = plugin[callbackName];
+      const callback = Reflect.get(plugin, callbackName) ?? undefined;
       if (!callback) {
         context.logger.error(`${callbackName} does not exist in plugin!`);
         return;
