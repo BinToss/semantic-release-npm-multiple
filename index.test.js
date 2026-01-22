@@ -18,7 +18,7 @@ describe('.', async () => {
       await rm('.tmp');
       exists = false;
     }
-    if (!exists) mkdir('.tmp');
+    if (!exists) await mkdir('.tmp');
     workingDirectory = await mkdtemp('.tmp/.');
     await copyFile('./package.json', workingDirectory + '/package.json');
   });
