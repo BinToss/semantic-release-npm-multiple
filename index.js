@@ -43,6 +43,12 @@ function createCallbackWrapper(callbackName) {
       registries || {},
     )) {
       const plugin = await getChildPlugin(registryName);
+      if (!plugin || typeof plugin !== 'object') {
+        context.logger.error(
+          'plugin is null or undefined or is not an object.',
+        );
+        return;
+      }
 
       const callback = Reflect.get(plugin, callbackName) ?? undefined;
       if (!callback) {
