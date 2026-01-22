@@ -1,3 +1,4 @@
+// @ts-check
 import { mkdtemp, rm } from 'node:fs/promises';
 import plugin from './index.js';
 import * as underlyingPlugin from '@semantic-release/npm';
