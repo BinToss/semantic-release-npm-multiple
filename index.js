@@ -55,7 +55,7 @@ function createCallbackWrapper(callbackName) {
       );
 
       const environmentVariablePrefix = `${registryName.toUpperCase()}_`;
-      const { env } = context;
+      const env = context.env ?? {};
       const childEnv = { ...env };
 
       for (const variableName of [
