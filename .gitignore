@@ -1,3 +1,4 @@
 node_modules
 .tmp/
 .yarn/install-state.gz
+*.tsbuildinfo
