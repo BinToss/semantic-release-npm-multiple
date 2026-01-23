@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "A semantic release plugin to publish an NPM package to multiple registries.",
   "main": "index.js",
-  "repository": "https://github.com/bintoss/semantic-release-npm-multiple",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bintoss/semantic-release-npm-multiple.git"
+  },
   "author": "Amanda Mitchell <she@mandymitchell.me>",
   "contributors": [
     "Noah 'bintoss' Sherwin <noahrsherwin@gmail.com>"
