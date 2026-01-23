@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bintoss/semantic-release-npm-multiple.git"
+    "url": "https://github.com/BinToss/semantic-release-npm-multiple"
   },
   "author": "Amanda Mitchell <she@mandymitchell.me>",
   "contributors": [
