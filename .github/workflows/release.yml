@@ -21,6 +21,7 @@ jobs:
         with:
           node-version: latest
           cache: yarn
+      - run: unset NODE_AUTH_TOKEN
       - name: Install dependencies
         run: yarn --immutable
       - name: Lint
@@ -32,6 +33,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_NPM_CONFIG_REGISTRY: https://npm.pkg.github.com/
-          PUBLIC_NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          #PUBLIC_NPM_TOKEN: '' ${{ secrets.NPM_TOKEN }}
           PUBLIC_NPM_CONFIG_REGISTRY: https://registry.npmjs.org/
         run: yarn semantic-release
