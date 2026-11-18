@@ -30,7 +30,7 @@
     "postinstall": "husky",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable",
-    "test": "node --test"
+    "test": "yarn node --test"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^20.5.3",
