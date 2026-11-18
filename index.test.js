@@ -1,9 +1,12 @@
 // @ts-check
-import { mkdtemp, rm, copyFile, stat, mkdir } from 'node:fs/promises';
+import { mkdtemp, rm, copyFile, readFile, stat, mkdir } from 'node:fs/promises';
 import plugin from './index.js';
 import * as underlyingPlugin from '@semantic-release/npm';
 import { describe, it, before, after } from 'node:test';
 import { deepStrictEqual } from 'node:assert';
+import { writeFile } from 'node:fs';
+import { promisify } from 'node:util';
+import { exec } from 'node:child_process';
 
 /** @type {string} */
 let workingDirectory;
@@ -20,10 +23,25 @@ describe('.', async () => {
     }
     if (!exists) await mkdir('.tmp');
     workingDirectory = await mkdtemp('.tmp/.');
-    await copyFile('./package.json', workingDirectory + '/package.json');
+    const tmpPackageJsonPath = workingDirectory + '/package.json';
+    await copyFile('./package.json', tmpPackageJsonPath);
+    const packageJsonText = await readFile(tmpPackageJsonPath, {
+      encoding: 'utf8',
+    });
+    const textNpmPackageManager = packageJsonText.replace(
+      /("packageManager": ").+"/,
+      '$1npm@12.0.0"',
+    );
+    await promisify(writeFile)(tmpPackageJsonPath, textNpmPackageManager);
+    await promisify(exec)('corepack up', {
+      encoding: 'utf8',
+      cwd: workingDirectory,
+    });
+    process.chdir(workingDirectory);
   });
 
   after(async () => {
+    process.chdir('../..');
     await rm(workingDirectory, { recursive: true });
   });
 
@@ -49,7 +67,7 @@ describe('.', async () => {
     stderr: process.stderr,
     env: {},
     nextRelease: { version: '1.0.0' },
-    cwd: workingDirectory,
+    cwd: process.cwd(),
     options: {},
     branch: { name: 'main' },
     branches: [{ name: 'main' }],
