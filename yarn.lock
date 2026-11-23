@@ -119,7 +119,7 @@ __metadata:
     typescript: "npm:6.0.3"
     which: "npm:^7.0.0"
   peerDependencies:
-    semantic-release: ">=19.0.0"
+    semantic-release: ">=19.0.3"
   languageName: unknown
   linkType: soft
 
