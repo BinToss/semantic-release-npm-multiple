@@ -66,7 +66,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:^20.5.3"
     "@npmcli/config": "npm:^11.2.0"
     "@npmcli/redact": "npm:^5.0.0"
-    "@semantic-release/npm": "patch:@semantic-release/npm@npm%3A13.1.5#.yarn/patches/@semantic-release-npm-npm-13.1.5-b23fe38a61.patch"
+    "@semantic-release/npm": "patch:@semantic-release/npm@npm%3A13.1.5#./.yarn/patches/@semantic-release-npm-npm-13.1.5-b23fe38a61.patch"
     "@types/node": "npm:^25.9.5"
     abbrev: "npm:^5.0.0"
     commitlint: "npm:^20.5.3"
@@ -954,9 +954,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/npm@patch:@semantic-release/npm@npm%3A13.1.5#.yarn/patches/@semantic-release-npm-npm-13.1.5-b23fe38a61.patch::locator=%40bintoss%2Fsemantic-release-npm-multiple%40workspace%3A.":
+"@semantic-release/npm@patch:@semantic-release/npm@npm%3A13.1.5#./.yarn/patches/@semantic-release-npm-npm-13.1.5-b23fe38a61.patch::locator=%40bintoss%2Fsemantic-release-npm-multiple%40workspace%3A.":
   version: 13.1.5
-  resolution: "@semantic-release/npm@patch:@semantic-release/npm@npm%3A13.1.5#.yarn/patches/@semantic-release-npm-npm-13.1.5-b23fe38a61.patch::version=13.1.5&hash=7ba61d&locator=%40bintoss%2Fsemantic-release-npm-multiple%40workspace%3A."
+  resolution: "@semantic-release/npm@patch:@semantic-release/npm@npm%3A13.1.5#./.yarn/patches/@semantic-release-npm-npm-13.1.5-b23fe38a61.patch::version=13.1.5&hash=7ba61d&locator=%40bintoss%2Fsemantic-release-npm-multiple%40workspace%3A."
   dependencies:
     "@actions/core": "npm:^3.0.0"
     "@semantic-release/error": "npm:^4.0.0"
