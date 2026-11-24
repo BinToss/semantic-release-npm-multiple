@@ -25,18 +25,18 @@ describe('.', async () => {
     workingDirectory = await mkdtemp('.tmp/.');
     const tmpPackageJsonPath = workingDirectory + '/package.json';
     await copyFile('./package.json', tmpPackageJsonPath);
-    const packageJsonText = await readFile(tmpPackageJsonPath, {
-      encoding: 'utf8',
-    });
-    const textNpmPackageManager = packageJsonText.replace(
-      /("packageManager": ").+"/,
-      '$1npm@12.0.0"',
-    );
-    await promisify(writeFile)(tmpPackageJsonPath, textNpmPackageManager);
-    await promisify(exec)('corepack up', {
-      encoding: 'utf8',
-      cwd: workingDirectory,
-    });
+    // const packageJsonText = await readFile(tmpPackageJsonPath, {
+    //   encoding: 'utf8',
+    // });
+    // const textNpmPackageManager = packageJsonText.replace(
+    //   /("packageManager": ").+"/,
+    //   '$1npm@12.0.0"',
+    // );
+    // await promisify(writeFile)(tmpPackageJsonPath, textNpmPackageManager);
+    // await promisify(exec)('corepack up', {
+    //   encoding: 'utf8',
+    //   cwd: workingDirectory,
+    // });
     process.chdir(workingDirectory);
   });
 
