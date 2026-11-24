@@ -33,7 +33,7 @@
     "test": "yarn node --test"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^20.5.3",
+    "@commitlint/config-conventional": "^21.2.4",
     "@npmcli/config": "^11.2.0",
     "@npmcli/redact": "^5.0.0",
     "@types/node": "^25.9.5",
