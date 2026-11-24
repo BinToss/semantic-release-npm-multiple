@@ -1,9 +1,4 @@
 version: 2
-registries:
-  npm-registry-npm-pkg-github-com:
-    type: npm-registry
-    url: https://npm.pkg.github.com
-    token: '${{secrets.GITHUB_TOKEN}}'
 
 updates:
   - package-ecosystem: npm
@@ -20,5 +15,3 @@ updates:
       prefix: feat
       prefix-development: chore
       include: scope
-    registries:
-      - npm-registry-npm-pkg-github-com
