@@ -1,4 +1,25 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>BinToss/renovate-config"]
+  "extends": ["github>bintoss/renovate-config"],
+  "semanticCommitType": "build",
+  "packageRules": [
+    {
+      "matchDepTypes": ["dependencies"],
+      "matchCategories": ["js"],
+      "semanticCommitType": "fix",
+      "semanticCommitScope": "deps"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchCategories": ["js"],
+      "semanticCommitType": "build",
+      "semanticCommitScope": "deps-dev",
+      "automerge": true
+    },
+    {
+      "description": "Disallow @yarnpkg/core@4.9.2 because it's broken",
+      "matchPackageNames": ["@yarnpkg/core"],
+      "allowedVersions": ">4.9.2"
+    }
+  ]
 }
