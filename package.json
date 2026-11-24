@@ -42,7 +42,7 @@
     "fs-minipass": "^3.0.3",
     "graceful-fs": "^4.2.12",
     "husky": "^9.1.7",
-    "lint-staged": "^16.4.0",
+    "lint-staged": "^17.6.1",
     "npm": "^12.2.3",
     "pinst": "^3.0.0",
     "prettier": "^3.9.5",
