@@ -36,6 +36,7 @@
     "@commitlint/config-conventional": "^21.2.4",
     "@npmcli/config": "^11.2.0",
     "@npmcli/redact": "^5.0.0",
+    "@semantic-release/github": "^12.0.11",
     "@semantic-release/release-notes-generator": "^14.1.1",
     "@types/node": "^26.6.6",
     "abbrev": "^5.0.0",
