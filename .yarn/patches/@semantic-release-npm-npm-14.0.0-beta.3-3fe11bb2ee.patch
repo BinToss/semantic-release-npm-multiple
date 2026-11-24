@@ -1,12 +1,12 @@
 diff --git a/lib/prepare.js b/lib/prepare.js
-index 3e76bec44cf595a1b4141728336bed904d4d518d..b47c4ee46b9c313db06689d49354a0c006a320fa 100644
+index 3e76bec44cf595a1b4141728336bed904d4d518d..9a18ed39eff406cb72e7ae127e1d1c29cb3628ad 100644
 --- a/lib/prepare.js
 +++ b/lib/prepare.js
 @@ -18,6 +18,7 @@ export default async function (
        cwd: basePath,
        env,
        preferLocal: true,
-+      localDir: import.meta.dirname
++      localDir: import.meta.dirname,
      }
    );
    versionResult.stdout.pipe(stdout, { end: false });
