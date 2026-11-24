@@ -38,7 +38,7 @@
     "@npmcli/redact": "^5.0.0",
     "@types/node": "^25.9.5",
     "abbrev": "^5.0.0",
-    "commitlint": "^20.5.3",
+    "commitlint": "^21.2.4",
     "fs-minipass": "^3.0.3",
     "graceful-fs": "^4.2.12",
     "husky": "^9.1.7",
