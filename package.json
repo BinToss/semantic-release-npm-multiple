@@ -47,7 +47,7 @@
     "pinst": "^3.0.0",
     "prettier": "^3.9.5",
     "proc-log": "^7.0.0",
-    "semantic-release": "^25.0.7",
+    "semantic-release": "^26.0.1",
     "semver": "^7.8.6",
     "typescript": "7.0.2",
     "which": "^7.0.0"
