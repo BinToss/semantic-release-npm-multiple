@@ -12,6 +12,6 @@ updates:
       separator: '-'
     open-pull-requests-limit: 10
     commit-message:
-      prefix: feat
+      prefix: fix
       prefix-development: chore
       include: scope
