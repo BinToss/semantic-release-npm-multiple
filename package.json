@@ -14,6 +14,7 @@
   "license": "MIT",
   "type": "module",
   "files": [
+    ".yarn/patches/@semantic-release-npm-npm-14.0.0-beta.3-3fe11bb2ee.patch",
     "index.js"
   ],
   "publishConfig": {
